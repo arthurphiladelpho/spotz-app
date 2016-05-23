@@ -20,6 +20,9 @@
   	display: block;
   	float: left;
   	font-weight: bold;
+  	width: 7em;
+  	padding: 0 0 0 0;
+
   }
 
  table {
@@ -27,6 +30,7 @@
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	border:none;
 	outline:none;
+
  }
 
  th {
@@ -93,7 +97,11 @@ tr:nth-child(odd) {
 	border-color: #454545;
  }
 
-ul, #container, #buttonContainer, #map, #results {
+ul, 
+#container, 
+#buttonContainer, 
+#map, 
+#results {
 	margin: 0 auto;
 }
 
@@ -104,7 +112,10 @@ ul, #container, #buttonContainer, #map, #results {
 	outline:none;			
 }
 
-#topbar, #map, #results, #footerDiv {
+#topbar, 
+#map, 
+#results, 
+#footerDiv {
 	width: 100%;
 }
 
@@ -127,7 +138,27 @@ ul, #container, #buttonContainer, #map, #results {
 
 #buttonContainer {
 	width: 1100px;
-	padding-left: 170px;
+	padding-left: 40px;
+}
+
+#Urca {
+	width: 4em;
+}
+
+#Leblon {
+	width: 5em;
+}
+
+#Copacabana {
+	width: 9em;
+}
+
+#Barra {
+	width: 5em;
+}
+
+#Sao_Conrado {
+	width: 9em;
 }
 
 #map {

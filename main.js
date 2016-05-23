@@ -13,8 +13,14 @@ function Places (name, latitude, longitude, array){
 // Button Maker function -> will create a button for every place object we please.
 function buttonMaker(place){
 	var button = document.createElement('button');
-	button.id = place.name;
-	button.value = place.name;
+	var value = place.name;
+	button.id = value;
+	// if(value ==="Sao_Conrado"){
+	// 	value = "São Conrado";
+	// }
+	var valueUsed = value.replace("_", " ");
+	// Muda o titulo mas nao o botao
+	button.value = valueUsed;
 	var lat = place.latitude;
 	var lng = place.longitude;
 	var buttonText = document.createTextNode(place.name);
@@ -74,19 +80,19 @@ Forecast.prototype = {
 	},
 
 	getWeather: function(data){
+		//This chunk of code defines the time that will be displayed and converts it from Unix time to now and hours from now.
 		var agora = Date.now()/1000;
 		agora = Math.round(agora);
 		var horario = data.currently.time;	
-
 		var tempo = horario - agora;
+
 		if(tempo >= 12){
 			tempo -= 3600;
 		} else {
 			tempo = 0;
 		}
-		
-		tempo = Math.round(tempo/12)*12;
 
+		tempo = Math.round(tempo/12)*12;
 		if(tempo != 0){
 			tempo /= 3600;
 			tempo += 1;
@@ -168,7 +174,7 @@ var urca = new Places('Urca', -22.955430, -43.164800, places);
 var copacabana = new Places('Copacabana', -22.9689662, -43.1844084, places);
 var ipanema = new Places('Ipanema', -22.986450, -43.205995, places);
 var leblon = new Places('Leblon', -22.987649, -43.221640, places);
-var sanca = new Places('Sao Conrado', -22.999373, -43.264027, places);
+var sanca = new Places('Sao_Conrado', -22.999373, -43.264027, places);
 var joatinga = new Places('Joatinga', -23.014354, -43.290364, places);
 var barra = new Places('Barra', -23.012240, -43.323770, places);
 var reserva = new Places('Reserva', -23.012849, -43.388988, places);
