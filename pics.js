@@ -14,7 +14,7 @@ Flickr.prototype = {
 
 	//The Flickr API callback function
 	getPhotos: function(data){
-		var resultsHTML = '<h3>' + 'Recent Pictures at ' + this.beach + '</h3>'
+		var resultsHTML = '<h3>' + 'Recent Pictures at ' + beach + '</h3>'
 		resultsHTML += "<ul>";
 		// Create a list item for each picture
 		 for(var i = 0; i < data.items.length; i++){

@@ -14,13 +14,15 @@ function Places (name, latitude, longitude, array){
 function buttonMaker(place){
 	var button = document.createElement('button');
 	var value = place.name;
-	button.id = value;
-	// if(value ==="Sao_Conrado"){
-	// 	value = "São Conrado";
-	// }
-	var valueUsed = value.replace("_", " ");
-	// Muda o titulo mas nao o botao
-	button.value = valueUsed;
+	
+	if(place.name == "São Conrado"){
+		button.id = "Sao_Conrado";		
+	}else{
+		button.id = value;
+	}
+	
+	button.value = value;
+	
 	var lat = place.latitude;
 	var lng = place.longitude;
 	var buttonText = document.createTextNode(place.name);
@@ -174,7 +176,7 @@ var urca = new Places('Urca', -22.955430, -43.164800, places);
 var copacabana = new Places('Copacabana', -22.9689662, -43.1844084, places);
 var ipanema = new Places('Ipanema', -22.986450, -43.205995, places);
 var leblon = new Places('Leblon', -22.987649, -43.221640, places);
-var sanca = new Places('Sao_Conrado', -22.999373, -43.264027, places);
+var sanca = new Places('São Conrado', -22.999373, -43.264027, places);
 var joatinga = new Places('Joatinga', -23.014354, -43.290364, places);
 var barra = new Places('Barra', -23.012240, -43.323770, places);
 var reserva = new Places('Reserva', -23.012849, -43.388988, places);
